@@ -1,108 +1,79 @@
-# Cookiecutter Data Science
+# Mental Health in the Tech Field 2016
 
-_A logical, reasonably standardized, but flexible project structure for doing and sharing data science work._
+(https://public.tableau.com/app/profile/tyler.loest/viz/MentalHealthProjectWIP/Dashboard1)
 
-
-#### [Project homepage](http://drivendata.github.io/cookiecutter-data-science/)
-
-
-### Requirements to use the cookiecutter template:
------------
- - Python 2.7 or 3.5+
- - [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html) >= 1.4.0: This can be installed with pip by or conda depending on how you manage your Python packages:
-
-``` bash
-$ pip install cookiecutter
-```
-
-or
-
-``` bash
-$ conda config --add channels conda-forge
-$ conda install cookiecutter
-```
+## Introduction to the Project
+This project is about looking at people's thoughts on mental health in the tech industy in 2016. Mental health is a very important topic that needs to be talked about more. It is often a taboo subject and this project shows how taboo it really was in 2016. 
 
 
-### To start a new project, run:
-------------
+## Table of Contents
 
-    cookiecutter -c v1 https://github.com/drivendata/cookiecutter-data-science
+- [About the Dataset](#about-the-dataset)
+- [Notebook Navigation](#notebook-navigation)
+- [My Approach to Solve this Problem](#my-approach-to-solve-this-problem)
+- [Technical Approach in This Project](#technical-approach-in-this-project)
+- [Limitations of Analysis](#limitations-of-analysis)
+- [Data Cleaning](#data-cleaning)
+- [Data Analysis](#data-analysis)
+- [Key Takeaways](#key-takeaways)
+- [Business Recommendation](#business-recommendation)
+- [Next Step](#next-step)
+- [References](#references)
+
+## About the Dataset
+- This dataset contains mental health related information in the tech industy in 2016
+- There are 1433 observations and 63 features, with each row being a differnt person.
+- After adding some features, it now has 70 features.
+- You can find the data publicly available here: [[OSMI Mental Health in Tech Survey 2016]](https://www.kaggle.com/datasets/osmi/mental-health-in-tech-2016)
+
+## Notebook Navigation
 
 
-[![asciicast](https://asciinema.org/a/244658.svg)](https://asciinema.org/a/244658)
+## My Approach to Solve this Problem
+There are many obervations we can look at by analyzing this data such as INSERT COUPLE SOMETHING HERE, etc. Those aren't the main objectives of this project but can be abserved. The main scope of this porject is to see **how taboo mental health is in the tech field.** 
 
-### New version of Cookiecutter Data Science
-------------
-Cookiecutter data science is moving to v2 soon, which will entail using
-the command `ccds ...` rather than `cookiecutter ...`. The cookiecutter command
-will continue to work, and this version of the template will still be available.
-To use the legacy template, you will need to explicitly use `-c v1` to select it.
-Please update any scripts/automation you have to append the `-c v1` option (as above),
-which is available now.
+I will be focusing on both quantitative data and qualitative data.
 
 
-### The resulting directory structure
-------------
+## Technical Approach in This Project
+- Initial pre-processing
+    - Packages: pandas, numpy, matplotlib
+    - in this notebook, I try and look at each feature and determine how much it would actually contribute to meaningful predictions when it comes to analysis. 
+    - fill in NaN and unknown values
+    - end result is a dataset that I can use for visualization and analysis
+    
 
-The directory structure of your new project looks like this: 
+- Feature cleaning & engineering
+    - Packages: pandas, numpy, matplotlib
+    - here I take the cleaned data from the previous notebook and continue to filter out unneccessary features
+    - utillize categorical feature encoding
 
-```
-├── LICENSE
-├── Makefile           <- Makefile with commands like `make data` or `make train`
-├── README.md          <- The top-level README for developers using this project.
-├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
-│
-├── docs               <- A default Sphinx project; see sphinx-doc.org for details
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
-│
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-│
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
-│
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
-│
-├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
-├── src                <- Source code for use in this project.
-│   ├── __init__.py    <- Makes src a Python module
-│   │
-│   ├── data           <- Scripts to download or generate data
-│   │   └── make_dataset.py
-│   │
-│   ├── features       <- Scripts to turn raw data into features for modeling
-│   │   └── build_features.py
-│   │
-│   ├── models         <- Scripts to train models and then use trained models to make
-│   │   │                 predictions
-│   │   ├── predict_model.py
-│   │   └── train_model.py
-│   │
-│   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-│       └── visualize.py
-│
-└── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
-```
+- Exploratory Data Analysis
+    - Packages: pandas, numpy, matplotlib, seaborn, plotly
+    - I take the unprocessed original data and just do a quick scatter mapbox visualization showing the location of each break, with the size being the number of breaks the pipe has experienced
 
-## Contributing
 
-We welcome contributions! [See the docs for guidelines](https://drivendata.github.io/cookiecutter-data-science/#contributing).
+## Limitations of Analysis
+-The data only applies to the people who responded and are in the tech field
+    -Other industries might have different responses to mental health taboo
+-The project currently shows only one year. 
+    -However their are other datasets from the same researchers conducted which could be used in the future to compare trends over the years. 
 
-### Installing development requirements
-------------
+## Data Cleaning
+The cleaning file was to data formating and to add features so the data can be interpreted better such as categorizing the free form answers in certain features
 
-    pip install -r requirements.txt
+## Data Analysis
+This section covers the overall approach that was taken after pre-processing the data, basically covering the whole EDA process.
 
-### Running the tests
-------------
+So far there are only a few completed visuals. As I iterate over the project, more visualizations will be added.
 
-    py.test tests
+## Key Takeaways
+
+
+## Business Recommendation
+
+
+## Next Step
+
+
+## References
